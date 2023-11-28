@@ -1,5 +1,3 @@
-package model;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -125,6 +123,11 @@ public class DataWriter extends DataConstants {
         ProjectList projects = ProjectList.getInstance();
         ArrayList<Project> projectList = projects.getProjects();
         JSONArray tasksJSON = new JSONArray();
+        /*
+         * Iterates through each project, each column within each project, and
+         * each task within each column within each project to accurately store
+         * all of the tasks in the JSON file.
+         */
         for (Project project : projectList) {
             for (Column column : project.getColumns()) {
                 for (Task task : column.getTasks()) {
@@ -138,7 +141,8 @@ public class DataWriter extends DataConstants {
                     }
 
                     /*
-                     * Handles the comments in the task
+                     * Handles the comments in the task and utilizes a
+                     * recursive method to save each comment and its replies
                      */
                     JSONArray commentsJSON = new JSONArray();
                     for (Comment comment : task.getComments()) {

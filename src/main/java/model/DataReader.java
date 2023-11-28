@@ -1,5 +1,3 @@
-package model;
-
 import java.io.FileReader;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -25,6 +23,7 @@ public class DataReader extends DataConstants {
             JSONParser parser = new JSONParser();
             JSONArray usersJSON = (JSONArray) new JSONParser().parse(userReader);
 
+            // Collects basic information from JSON file and creates a user object
             for (int i = 0; i < usersJSON.size(); i++) {
                 UserType userType;
                 JSONObject userJSON = (JSONObject) usersJSON.get(i);
@@ -37,6 +36,7 @@ public class DataReader extends DataConstants {
                 int permissionLevel = ((Long) userJSON.get(PERMISSION_LEVEL)).intValue();
                 int tasksCompleted = ((Long) userJSON.get(TASKS_COMPLETED)).intValue();
 
+                // Retuns the list of users from the json file
                 users.add(new User(uuid, firstName, lastName, userName, email, password, permissionLevel,
                         tasksCompleted));
             }
@@ -62,6 +62,7 @@ public class DataReader extends DataConstants {
             JSONParser parser = new JSONParser();
             JSONArray projectsJSON = (JSONArray) new JSONParser().parse(projectReader);
 
+            // Collects basic information from JSON file
             for (int i = 0; i < projectsJSON.size(); i++) {
                 JSONObject projectJSON = (JSONObject) projectsJSON.get(i);
                 UUID uuid = UUID.fromString((String) projectJSON.get(PROJECT_ID));
@@ -70,7 +71,7 @@ public class DataReader extends DataConstants {
                 int sprintTime = ((Long) projectJSON.get(SPRINT_TIME)).intValue();
                 String sprintUnits = (String) projectJSON.get(SPRINT_UNITS);
 
-                // Parse through team members and add them to teamMembersList ArrayList
+                // Parse through team members and adds them to teamMembersList ArrayList
                 JSONArray teamMembers = (JSONArray) projectJSON.get(TEAM_MEMBERS);
                 ArrayList<User> teamMembersList = new ArrayList<User>();
                 for (int j = 0; j < teamMembers.size(); j++) {
@@ -159,6 +160,7 @@ public class DataReader extends DataConstants {
             FileReader taskReader = new FileReader(TASK_FILE);
             JSONParser taskParser = new JSONParser();
             JSONArray tasksJSON = (JSONArray) new JSONParser().parse(taskReader);
+            // goes through the tasks JSON file and creates a task object for each one
             for (int l = 0; l < tasksJSON.size(); l++) {
                 JSONObject taskJSON = (JSONObject) tasksJSON.get(l);
                 UUID taskUUID = UUID.fromString((String) taskJSON.get(TASK_ID));
@@ -170,6 +172,7 @@ public class DataReader extends DataConstants {
 
                 ArrayList<Comment> comments = new ArrayList<Comment>();
                 JSONArray commentsJSON = (JSONArray) taskJSON.get(COMMENTS);
+                // Calls recurisve method to handle recursive comments/replies
                 getComments(commentsJSON, comments);
 
                 Task task = new Task(taskUUID, taskName, taskDescription, taskPriority,
