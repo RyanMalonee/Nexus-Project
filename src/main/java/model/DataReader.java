@@ -1,3 +1,5 @@
+package model;
+
 import java.io.FileReader;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
