@@ -1,3 +1,31 @@
 .root {
+  -primary-color: #215476;
   -fx-font-family: "Helvetica";
+  -fx-background-color: radial-gradient(
+    center 50% 50%,
+    radius 60%,
+    #ffffff,
+    -primary-color
+  );
+}
+
+.title {
+  -fx-font-size: 24px;
+}
+
+.header {
+  -fx-fill: -primary-color;
+  -fx-font-weight: bold;
+}
+
+#sidePanel {
+  -fx-background-radius: 20;
+}
+
+.divider {
+  -fx-background-color: #efefef;
+}
+
+.error {
+  -fx-text-fill: red;
 }

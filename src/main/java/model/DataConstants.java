@@ -2,7 +2,7 @@ package model;
 
 public abstract class DataConstants {
     // user.json information
-    protected static final String USER_FILE = "json/user.json";
+    protected static final String USER_FILE = "src/main/data/user.json";
     protected static final String USER = "User";
     protected static final String USER_ID = "id";
     protected static final String USERNAME = "username";
@@ -14,7 +14,7 @@ public abstract class DataConstants {
     protected static final String TASKS_COMPLETED = "tasks-complete";
 
     // project.json information
-    protected static final String PROJECT_FILE = "json/project.json";
+    protected static final String PROJECT_FILE = "src/main/data/project.json";
     protected static final String PROJECT = "Project";
     protected static final String PROJECT_ID = "project-id";
     protected static final String PROJECT_NAME = "project-name";
@@ -36,7 +36,7 @@ public abstract class DataConstants {
     protected static final String COMMENT_PRIORITY = "priority";
 
     // tasks.json information
-    protected static final String TASK_FILE = "json/tasks.json";
+    protected static final String TASK_FILE = "src/main/data/tasks.json";
     protected static final String TASK = "Task";
     protected static final String TASK_ID = "task-id";
     protected static final String TASK_NAME = "task-name";

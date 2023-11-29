@@ -6,13 +6,13 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import library.App;
 import model.*;
 
 public class LoginController {
-
-    private ProjectManagerFacade facade;
 
     @FXML
     private ResourceBundle resources;
@@ -24,12 +24,17 @@ public class LoginController {
     private TextField passwordTxt;
 
     @FXML
-    void onLoginClicked(ActionEvent event) throws IOException {
+    private Label errorLabel;
+
+    @FXML
+    void onLoginClicked(MouseEvent event) throws IOException {
         String username = usernameTxt.getText();
         String password = passwordTxt.getText();
 
+        ProjectManagerFacade facade = new ProjectManagerFacade();
+
         if (!facade.login(username, password)) {
-            System.out.println("Login failed");
+            errorLabel.setText("Invalid username or password");
             return;
         }
 
@@ -37,7 +42,7 @@ public class LoginController {
     }
 
     @FXML
-    void onSignupClicked(ActionEvent event) throws IOException {
+    void onSignupClicked(MouseEvent event) throws IOException {
         App.setRoot("signup");
     }
 
