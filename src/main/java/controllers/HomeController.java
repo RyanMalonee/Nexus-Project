@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.input.MouseEvent;
 import library.App;
 
 public class HomeController {
@@ -16,12 +17,12 @@ public class HomeController {
     private URL location;
 
     @FXML
-    void onLoginClicked(ActionEvent event) throws IOException {
+    void onLoginClicked(MouseEvent event) throws IOException {
         App.setRoot("login");
     }
 
     @FXML
-    void onSignupClicked(ActionEvent event) throws IOException {
+    void onSignupClicked(MouseEvent event) throws IOException {
         App.setRoot("signup");
     }
 
