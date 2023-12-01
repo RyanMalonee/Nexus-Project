@@ -71,3 +71,22 @@
 .big {
   -fx-font-size: 40px;
 }
+
+.list-view {
+  -fx-background-color: transparent;
+}
+
+.list-view .list-cell {
+  -fx-background-color: -primary-color;
+  -fx-background-radius: 10;
+  -fx-text-fill: #c8d1d0;
+  -fx-padding: 5px;
+  -fx-border-style: solid;
+  -fx-border-color: #efefef;
+  -fx-border-width: 2px;
+}
+
+.list-view .list-cell:empty {
+  -fx-background-color: transparent;
+  -fx-border-color: transparent;
+}

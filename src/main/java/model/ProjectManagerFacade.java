@@ -160,4 +160,8 @@ public class ProjectManagerFacade {
   public String getChangeLog(Task task) {
     return task.getChangeLog().toString();
   }
+
+  public User getCurrentUser() {
+    return currentUser;
+  }
 }
