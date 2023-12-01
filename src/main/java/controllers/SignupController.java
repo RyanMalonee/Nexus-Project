@@ -44,7 +44,7 @@ public class SignupController {
 
     @FXML
     void signUpUser(MouseEvent event) throws IOException {
-        ProjectManagerFacade facade = new ProjectManagerFacade();
+        ProjectManagerFacade facade = ProjectManagerFacade.getInstance();
         UserList users = UserList.getInstance();
         facade.signup(firstNameTxt.getText(), lastNameTxt.getText(), userNameTxt.getText(), emailTxt.getText(),
                 passwordTxt.getText(), 0, 0);

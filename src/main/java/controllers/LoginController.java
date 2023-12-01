@@ -31,7 +31,7 @@ public class LoginController {
         String username = usernameTxt.getText();
         String password = passwordTxt.getText();
 
-        ProjectManagerFacade facade = new ProjectManagerFacade();
+        ProjectManagerFacade facade = ProjectManagerFacade.getInstance();
 
         if (!facade.login(username, password)) {
             errorLabel.setText("Invalid username or password");

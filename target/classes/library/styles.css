@@ -41,3 +41,33 @@
   -fx-background-color: #4095e5;
   -fx-border-color: #4095e5;
 }
+
+.radius {
+  -fx-background-color: #215476;
+  -fx-background-radius: 0 0 20 0;
+}
+
+.menuItem {
+  -fx-border-color: transparent;
+  -fx-border-width: 0;
+  -fx-text-fill: #1784fc;
+  -fx-fill: #1784fc;
+  -fx-font-size: 10px;
+  -fx-background-color: #c8d1d0;
+}
+
+.sidePanel {
+  -fx-background-color: #c8d1d0;
+}
+
+.logo {
+  -fx-font-size: 32px;
+}
+
+#name {
+  -fx-font-size: 20px;
+}
+
+.big {
+  -fx-font-size: 40px;
+}

@@ -7,7 +7,23 @@ import java.util.ArrayList;
  * and tasks.
  */
 public class ProjectManagerFacade {
+
+  private static ProjectManagerFacade projectManagerFacade;
   private User currentUser;
+
+  public ProjectManagerFacade() {
+    currentUser = null;
+  }
+
+  /**
+   * Constructs a new singleton ProjectManagerFacade object.
+   */
+  public static ProjectManagerFacade getInstance() {
+    if (projectManagerFacade == null) {
+      projectManagerFacade = new ProjectManagerFacade();
+    }
+    return projectManagerFacade;
+  }
 
   /**
    * Login a user with the given username and password.
