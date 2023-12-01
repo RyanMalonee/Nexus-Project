@@ -19,7 +19,7 @@
             <TextField fx:id="passwordTxt" layoutX="200.0" layoutY="136.0" prefHeight="10.0" prefWidth="151.0" promptText="Password" />
             <Label layoutX="110.0" layoutY="98.0" text="Username:" />
             <Label layoutX="110.0" layoutY="140.0" text="Password:" />
-            <Button fx:id="loginButton" layoutX="127.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#onLoginClicked" prefHeight="26.0" prefWidth="151.0" text="Login" />
+            <Button fx:id="loginButton" layoutX="127.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#onLoginClicked" prefHeight="26.0" prefWidth="151.0" styleClass="buttonForm" text="Login" />
             <Text layoutX="197.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="or" />
             <Hyperlink accessibleRole="BUTTON" layoutX="175.0" layoutY="248.0" onMouseClicked="#onSignupClicked" text="Sign Up" />
             <Label fx:id="errorLabel" alignment="CENTER" layoutX="40.0" layoutY="283.0" prefHeight="16.0" prefWidth="329.0" styleClass="error" textAlignment="CENTER" />

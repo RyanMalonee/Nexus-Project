@@ -16,7 +16,7 @@
    <children>
       <Pane layoutX="117.0" layoutY="65.0" prefHeight="350.0" prefWidth="407.0" styleClass="divider">
          <children>
-            <VBox alignment="TOP_CENTER" layoutX="13.0" layoutY="14.0" prefHeight="200.0" prefWidth="100.0">
+            <VBox alignment="TOP_CENTER" layoutX="13.0" layoutY="23.0" prefHeight="200.0" prefWidth="100.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Code Nexus Project Management" wrappingWidth="380.09765625">
                      <styleClass>
@@ -109,7 +109,7 @@
                         <Insets top="5.0" />
                      </VBox.margin>
                   </HBox>
-                  <Button fx:id="loginButton" mnemonicParsing="false" onMouseClicked="#signUpUser" prefHeight="26.0" prefWidth="151.0" text="Sign Up">
+                  <Button fx:id="loginButton" mnemonicParsing="false" onMouseClicked="#signUpUser" prefHeight="26.0" prefWidth="151.0" styleClass="buttonForm" text="Sign Up">
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>

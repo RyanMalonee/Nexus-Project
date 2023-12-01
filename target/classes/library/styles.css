@@ -29,3 +29,15 @@
 .error {
   -fx-text-fill: red;
 }
+
+.button {
+  -fx-text-fill: -primary-color;
+  -fx-border-color: -primary-color;
+  -fx-border-width: 2px;
+}
+
+.buttonForm {
+  -fx-text-fill: white;
+  -fx-background-color: #4095e5;
+  -fx-border-color: #4095e5;
+}
