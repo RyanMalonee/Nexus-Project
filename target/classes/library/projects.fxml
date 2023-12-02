@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
@@ -14,13 +13,9 @@
    <children>
       <VBox layoutX="-2.0" layoutY="50.0" prefHeight="429.0" prefWidth="160.0" styleClass="sidePanel">
          <children>
-            <MenuButton maxWidth="170.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="160.0" styleClass="menuItem" text="Projects">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-              </items>
-            </MenuButton>
-            <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="15.0" prefWidth="160.0" styleClass="menuItem" text="Button" />
+            <MenuButton fx:id="projectPanel" maxWidth="170.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="160.0" styleClass="menuItem" text="Projects" />
+            <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="15.0" prefWidth="160.0" styleClass="menuItem" text="Profile" />
+            <Button alignment="TOP_LEFT" mnemonicParsing="false" onMouseClicked="#logOut" prefHeight="15.0" prefWidth="160.0" styleClass="menuItem" text="Log Out!" />
          </children>
       </VBox>
       <Pane prefHeight="50.0" prefWidth="182.0" styleClass="radius">

@@ -9,6 +9,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseEvent;
 import library.App;
 import model.*;
@@ -23,6 +25,9 @@ public class ProjectsController {
 
     @FXML
     private ListView<String> projectContainer;
+
+    @FXML
+    private MenuButton projectPanel;
 
     private ProjectList projectList;
     private Project selectedProject;
@@ -45,8 +50,20 @@ public class ProjectsController {
         for (Project project : projects) {
             project_List.add(project.getProjectName() + "\n" + project.getProjectDescription());
         }
-
         projectContainer.setItems(project_List);
+
+        for (Project project : projects) {
+            MenuItem item = new MenuItem();
+            item.setText(project.getProjectName());
+            projectPanel.getItems().add(item);
+            item.setOnAction(event -> {
+                try {
+                    menuItemSelected(item.getText());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
     }
 
     @FXML
@@ -59,9 +76,23 @@ public class ProjectsController {
             }
         }
         App.setRoot("projectInfo");
-        if (selectedProject == null) {
-            ProjectInfoController.setProject(selectedProject);
-        }
+        ProjectInfoController.setProject(selectedProject);
     }
 
+    @FXML
+    void menuItemSelected(String name) throws IOException {
+        for (Project project : projectList.getProjects()) {
+            if (project.getProjectName().equalsIgnoreCase(name)) {
+                selectedProject = project;
+            }
+        }
+        App.setRoot("projectInfo");
+        ProjectInfoController.setProject(selectedProject);
+    }
+
+    @FXML
+    void logOut(MouseEvent event) throws IOException {
+        facade.logout();
+        App.setRoot("home");
+    }
 }

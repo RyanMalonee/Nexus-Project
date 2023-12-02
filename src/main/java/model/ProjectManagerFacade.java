@@ -164,4 +164,8 @@ public class ProjectManagerFacade {
   public User getCurrentUser() {
     return currentUser;
   }
+
+  public void logout() {
+    currentUser = null;
+  }
 }
