@@ -2,8 +2,8 @@
   -primary-color: #215476;
   -fx-font-family: "Helvetica";
   -fx-background-color: radial-gradient(
-    center 50% 50%,
-    radius 60%,
+    center 70% 50%,
+    radius 45%,
     #ffffff,
     -primary-color
   );
@@ -11,6 +11,15 @@
 
 .title {
   -fx-font-size: 24px;
+}
+
+.logoBig {
+  -fx-font-size: 250px;
+  -fx-font-weight: bold;
+}
+
+.lightText {
+  -fx-fill: #c8d1d0;
 }
 
 .header {
