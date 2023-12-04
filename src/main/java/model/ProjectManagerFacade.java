@@ -10,6 +10,7 @@ public class ProjectManagerFacade {
 
   private static ProjectManagerFacade projectManagerFacade;
   private User currentUser;
+  private Project currentProject;
 
   public ProjectManagerFacade() {
     currentUser = null;
@@ -167,5 +168,13 @@ public class ProjectManagerFacade {
 
   public void logout() {
     currentUser = null;
+  }
+
+  public void setProject(Project project) {
+    currentProject = project;
+  }
+
+  public Project getProject() {
+    return currentProject;
   }
 }

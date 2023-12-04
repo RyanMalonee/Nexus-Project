@@ -34,7 +34,28 @@
         "task-list": ["185fd4f6-e7d7-4963-a5d0-306d156aa9e7"]
       }
     ],
-    "comments": []
+    "comments": [
+      {
+        "commenter": "4097051c-3569-4e31-95a5-30d00dff1489",
+        "comment-description": "This is a test.",
+        "datetime": "2003-10-19T12:30:29.120",
+        "comment-comments": [
+          {
+            "commenter": "4097051c-3569-4e31-95a5-30d00dff1489",
+            "comment-description": "Reply to the first comment.",
+            "datetime": "2003-10-19T12:35:29.120",
+            "priority": 2
+          },
+          {
+            "commenter": "4097051c-3569-4e31-95a5-30d00dff1489",
+            "comment-description": "Another reply.",
+            "datetime": "2003-10-19T12:40:29.120",
+            "priority": 1
+          }
+        ],
+        "priority": 3
+      }
+    ]
   },
   {
     "project-id": "0918faa3-4ba0-45f3-9585-fcc89f6c21b4",

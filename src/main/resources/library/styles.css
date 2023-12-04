@@ -1,5 +1,6 @@
 .root {
   -primary-color: #215476;
+  -accent-color: #c8d1d0;
   -fx-font-family: "Helvetica";
   -fx-background-color: radial-gradient(
     center 70% 50%,
@@ -98,4 +99,36 @@
 .list-view .list-cell:empty {
   -fx-background-color: transparent;
   -fx-border-color: transparent;
+}
+
+.namePane {
+  -fx-background-color: -primary-color;
+  -fx-background-radius: 15;
+}
+
+.accentText {
+  -fx-fill: -accent-color;
+}
+
+.mediumText {
+  -fx-font-size: 25px;
+}
+
+.accordion .title {
+  -fx-font-size: 12px;
+}
+
+.whiteBackground {
+  -fx-background-color: white;
+}
+
+.label {
+  -fx-fill: -primary-color;
+  -fx-font-weight: bold;
+  -fx-font-size: 18px;
+}
+
+#detailPane Text,
+#commentPane Text {
+  -fx-font-size: 10px;
 }

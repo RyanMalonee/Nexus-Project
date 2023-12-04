@@ -53,6 +53,7 @@ public class ProjectsController {
         projectContainer.setItems(project_List);
 
         for (Project project : projects) {
+            projectPanel.getItems().clear();
             MenuItem item = new MenuItem();
             item.setText(project.getProjectName());
             projectPanel.getItems().add(item);
@@ -72,22 +73,20 @@ public class ProjectsController {
         selectedProjectString = selectedProjectString.substring(0, selectedProjectString.indexOf("\n"));
         for (Project project : projectList.getProjects()) {
             if (project.getProjectName().equalsIgnoreCase(selectedProjectString)) {
-                selectedProject = project;
+                facade.setProject(project);
+                App.setRoot("projectInfo");
             }
         }
-        App.setRoot("projectInfo");
-        ProjectInfoController.setProject(selectedProject);
     }
 
     @FXML
     void menuItemSelected(String name) throws IOException {
         for (Project project : projectList.getProjects()) {
             if (project.getProjectName().equalsIgnoreCase(name)) {
-                selectedProject = project;
+                facade.setProject(project);
+                App.setRoot("projectInfo");
             }
         }
-        App.setRoot("projectInfo");
-        ProjectInfoController.setProject(selectedProject);
     }
 
     @FXML
