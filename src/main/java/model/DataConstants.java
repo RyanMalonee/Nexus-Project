@@ -43,4 +43,7 @@ public abstract class DataConstants {
     protected static final String TASK_DESCRIPTION = "task-description";
     protected static final String TASK_PRIORITY = "task-priority";
     protected static final String TASK_ASSIGNEE = "task-assignee";
+    protected static final String TASK_REQUIREMENTS = "task-requirements";
+    protected static final String BUG_REPRODUCTION_STEPS = "bug-reproduction-steps";
+    protected static final String BUG_DESCRIPTION = "bug-description";
 }

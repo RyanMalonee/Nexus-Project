@@ -141,7 +141,16 @@ public class DataWriter extends DataConstants {
                     if (task.getAssignee() != null) {
                         taskInfo.put(TASK_ASSIGNEE, task.getAssignee().getUUID().toString());
                     }
+                    if (task instanceof NewFeature) {
+                        NewFeature newFeatureTask = (NewFeature) task;
+                        taskInfo.put(TASK_REQUIREMENTS, newFeatureTask.getRequirements().toString());
+                    }
 
+                    if (task instanceof BugFix) {
+                        BugFix bugFixTask = (BugFix) task;
+                        taskInfo.put(BUG_REPRODUCTION_STEPS, bugFixTask.getBugReproductionSteps());
+                        taskInfo.put(BUG_DESCRIPTION, bugFixTask.getBugDescription());
+                    }
                     /*
                      * Handles the comments in the task and utilizes a
                      * recursive method to save each comment and its replies
