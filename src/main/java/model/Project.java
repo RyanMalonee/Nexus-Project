@@ -1,5 +1,4 @@
 package model;
-
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -140,7 +139,7 @@ public class Project {
    */
   private void buildColumns() {
     columns = new ArrayList<Column>();
-    columns.add(new Column(ColumnType.NEWTASK));
+    columns.add(new Column(ColumnType.BACKLOG));
     columns.add(new Column(ColumnType.INPROGRESS));
     columns.add(new Column(ColumnType.COMPLETED));
     columns.add(new Column(ColumnType.ARCHIVE));

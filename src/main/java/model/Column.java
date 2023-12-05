@@ -1,5 +1,4 @@
 package model;
-
 import java.util.ArrayList;
 
 /**
@@ -18,8 +17,8 @@ public class Column {
      */
     public Column(ColumnType columnType) {
         this.columnType = columnType;
-        if (this.columnType == ColumnType.NEWTASK) {
-            this.columnName = "New Task";
+        if (this.columnType == ColumnType.BACKLOG) {
+            this.columnName = "Backlog";
         } else if (this.columnType == ColumnType.INPROGRESS) {
             this.columnName = "In Progress";
         } else if (this.columnType == ColumnType.COMPLETED) {
@@ -37,8 +36,8 @@ public class Column {
      */
     public Column(String columnName) {
         this.columnName = columnName;
-        if (columnName.equals("New Task")) {
-            this.columnType = ColumnType.NEWTASK;
+        if (columnName.equals("Backlog")) {
+            this.columnType = ColumnType.BACKLOG;
         } else if (columnName.equals("In Progress")) {
             this.columnType = ColumnType.INPROGRESS;
         } else if (columnName.equals("Completed")) {
