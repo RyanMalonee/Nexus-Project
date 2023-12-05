@@ -17,6 +17,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import library.App;
 import model.*;
@@ -112,18 +113,28 @@ public class ProjectInfoController {
         }
         commentTxt.setText(commentText);
 
+        columnContainer.getChildren().clear();
         for (Column column : project.getColumns()) {
-            String text = "";
-            ScrollPane newPane = new ScrollPane();
-            newPane.setPrefSize(300, 200);
-            newPane.getStyleClass().add("columns");
-            text += column.getName() + "\n\n";
+            HBox hbox = new HBox();
+            columnContainer.getChildren().add(hbox);
+
+            VBox vbox = new VBox();
+            hbox.getChildren().add(vbox);
+            hbox.getStyleClass().add("columns");
+
+            Label label = new Label(column.getName());
+            label.getStyleClass().add("small-text");
+
+            vbox.getChildren().add(label);
+
             for (Task task : column.getTasks()) {
-                text += "  - " + task.toString() + "\n";
+                ScrollPane scrollPane = new ScrollPane();
+                scrollPane.setPrefSize(300, 50);
+                Label taskLabel = new Label(task.getTaskName() + "\n" + task.getTaskDescription());
+                taskLabel.getStyleClass().add("small-text");
+                scrollPane.setContent(taskLabel);
+                vbox.getChildren().add(scrollPane);
             }
-            Label content = new Label(text);
-            newPane.setContent(content);
-            columnContainer.getChildren().add(newPane);
         }
     }
 

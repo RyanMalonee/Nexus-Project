@@ -133,10 +133,10 @@
   -fx-font-size: 10px;
 }
 
-.columns .label {
-  -fx-font-size: 10px;
-}
-
 .columns {
   -fx-padding: 5px;
+}
+
+.small-text {
+  -fx-font-size: 10px;
 }

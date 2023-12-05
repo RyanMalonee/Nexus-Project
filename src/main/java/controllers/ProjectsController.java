@@ -52,8 +52,8 @@ public class ProjectsController {
         }
         projectContainer.setItems(project_List);
 
+        projectPanel.getItems().clear();
         for (Project project : projects) {
-            projectPanel.getItems().clear();
             MenuItem item = new MenuItem();
             item.setText(project.getProjectName());
             projectPanel.getItems().add(item);
