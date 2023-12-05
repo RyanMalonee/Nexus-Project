@@ -134,6 +134,15 @@ public class ProjectInfoController {
                 taskLabel.getStyleClass().add("small-text");
                 scrollPane.setContent(taskLabel);
                 vbox.getChildren().add(scrollPane);
+
+                scrollPane.setOnMouseClicked(event -> {
+                    try {
+                        TaskController.setTask(task);
+                        App.setRoot("taskInfo");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
             }
         }
     }
