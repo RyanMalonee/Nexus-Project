@@ -8,8 +8,10 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TitledPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -109,6 +111,20 @@ public class ProjectInfoController {
             commentText += "- " + comment.toString() + "\n";
         }
         commentTxt.setText(commentText);
+
+        for (Column column : project.getColumns()) {
+            String text = "";
+            ScrollPane newPane = new ScrollPane();
+            newPane.setPrefSize(300, 200);
+            newPane.getStyleClass().add("columns");
+            text += column.getName() + "\n\n";
+            for (Task task : column.getTasks()) {
+                text += "  - " + task.toString() + "\n";
+            }
+            Label content = new Label(text);
+            newPane.setContent(content);
+            columnContainer.getChildren().add(newPane);
+        }
     }
 
     @FXML
