@@ -37,6 +37,8 @@ public class NewTaskController {
 
     private ProjectManagerFacade facade;
 
+    private ProjectList projectList;
+
     @FXML
     void onCreateTaskClicked(MouseEvent event) throws IOException {
 
@@ -62,8 +64,9 @@ public class NewTaskController {
         }
 
         Task task = new Task(name, description, 1, assigneeUser);
-        facade.addTask(currentProject, 0, task);
+        facade.addTask(currentProject, 1, task);
 
+        projectList.saveProjects();
         App.setRoot("projectInfo");
     }
 
@@ -76,5 +79,6 @@ public class NewTaskController {
     @FXML
     void initialize() {
         facade = ProjectManagerFacade.getInstance();
+        projectList = ProjectList.getInstance();
     }
 }

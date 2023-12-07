@@ -162,8 +162,8 @@ public class ProjectInfoController {
     }
 
     @FXML
-    void onNewTaskClicked(MouseEvent event) throws IOException {
-        App.setRoot("newTask");
+    void onAddColumnClicked(MouseEvent event) throws IOException {
+        App.setRoot("newColumn");
     }
 
     @FXML
