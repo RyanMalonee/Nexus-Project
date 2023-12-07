@@ -22,7 +22,7 @@ import javafx.scene.text.Text;
 import library.App;
 import model.*;
 
-public class ProjectInfoController {
+public class TasksController {
 
     @FXML
     private ResourceBundle resources;
@@ -46,34 +46,45 @@ public class ProjectInfoController {
     private AnchorPane detailContainer;
 
     @FXML
-    private Text projectDescription;
+    private Text taskDescription;
 
     @FXML
     private MenuButton projectPanel;
 
     @FXML
-    private Text projectTitle;
+    private Text taskTitle;
 
     @FXML
-    private Text scrumMasterTxt;
+    private Text changeLogText;
 
     @FXML
-    private Text teamMembersTxt;
+    private Text priorityText;
 
     @FXML
-    private Text detailTxt;
+    private Text statusText;
+
+    @FXML
+    private Text assigneesText;
 
     @FXML
     private Text commentTxt;
 
+    private Project project;
+
     private ProjectList projectList;
-    private UserList userList;
     private ProjectManagerFacade facade;
+    private static Task selectedTask;
+    private static Project selectedProject;
 
     @FXML
     void logOut(MouseEvent event) throws IOException {
         facade.logout();
         App.setRoot("home");
+    }
+
+    public static void setTask(Task task, Project project) {
+        selectedTask = task;
+        selectedProject = project;
     }
 
     @FXML
@@ -95,75 +106,30 @@ public class ProjectInfoController {
     }
 
     @FXML
-    void displayProjectInfo(Project project) {
-        projectTitle.setText(project.getProjectName());
-        projectDescription.setText(project.getProjectDescription());
+    void displayTaskInfo(Task task) {
+        task = selectedTask;
+        project = selectedProject;
+        taskTitle.setText(task.getTaskName());
+        taskDescription.setText(task.getTaskDescription());
+        priorityText.setText(String.valueOf(task.getTaskPriority()));
+        if (task.getAssignee() != null) {
 
-        scrumMasterTxt.setText(project.getScrumMaster().getFirstName() + " " + project.getScrumMaster().getLastName());
-        String teamMembers = "";
-        for (User user : project.getTeamMembers()) {
-            teamMembers += "- " + user.getFirstName() + " " + user.getLastName() + "\n";
+            String assigneeString = task.getAssigneeString();
+
+            assigneesText.setText(assigneesText.getText() + assigneeString + "\n");
+
         }
-        teamMembersTxt.setText(teamMembers);
-        detailTxt.setText(project.getSprintTime() + " " + project.getSprintUnits());
 
         String commentText = "";
         for (Comment comment : project.getComments()) {
             commentText += "- " + comment.toString() + "\n";
         }
         commentTxt.setText(commentText);
-
-        columnContainer.getChildren().clear();
-        for (Column column : project.getColumns()) {
-            HBox hbox = new HBox();
-            columnContainer.getChildren().add(hbox);
-
-            VBox vbox = new VBox();
-            hbox.getChildren().add(vbox);
-            hbox.getStyleClass().add("columns");
-
-            Label label = new Label(column.getName());
-            label.getStyleClass().add("small-text");
-
-            vbox.getChildren().add(label);
-
-            for (Task task : column.getTasks()) {
-                ScrollPane scrollPane = new ScrollPane();
-                scrollPane.setPrefSize(300, 50);
-                Label taskLabel = new Label(task.getTaskName() + "\n" + task.getTaskDescription());
-                taskLabel.getStyleClass().add("small-text");
-                scrollPane.setContent(taskLabel);
-                vbox.getChildren().add(scrollPane);
-
-                scrollPane.setOnMouseClicked(event -> {
-                    try {
-                        TasksController.setTask(task, project);
-                        App.setRoot("task");
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                });
-            }
-        }
     }
 
     @FXML
     void menuItemSelected(String name) throws IOException {
-        Project newProject = null;
-        for (Project project : projectList.getProjects()) {
-            if (project.getProjectName().equalsIgnoreCase(name)) {
-                newProject = project;
-            }
-        }
-        if (newProject != null) {
-            facade.setProject(newProject);
-        }
         initialize();
-    }
-
-    @FXML
-    void onNewTaskClicked(MouseEvent event) throws IOException {
-        App.setRoot("newTask");
     }
 
     @FXML
@@ -176,17 +142,16 @@ public class ProjectInfoController {
         assert commentPane != null : "fx:id=\"commentPane\" was not injected: check your FXML file 'projectInfo.fxml'.";
         assert detailContainer != null
                 : "fx:id=\"detailContainer\" was not injected: check your FXML file 'projectInfo.fxml'.";
-        assert projectDescription != null
-                : "fx:id=\"projectDescription\" was not injected: check your FXML file 'projectInfo.fxml'.";
+        assert taskDescription != null
+                : "fx:id=\"taskDescription\" was not injected: check your FXML file 'projectInfo.fxml'.";
         assert projectPanel != null
                 : "fx:id=\"projectPanel\" was not injected: check your FXML file 'projectInfo.fxml'.";
-        assert projectTitle != null
-                : "fx:id=\"projectTitle\" was not injected: check your FXML file 'projectInfo.fxml'.";
-        projectList = ProjectList.getInstance();
-        userList = UserList.getInstance();
+        assert taskTitle != null : "fx:id=\"projectTitle\" was not injected: check your FXML file 'projectInfo.fxml'.";
         facade = ProjectManagerFacade.getInstance();
+        projectList = ProjectList.getInstance();
         displayProjects();
-        displayProjectInfo(facade.getProject());
+        displayTaskInfo(selectedTask);
+
     }
 
 }
