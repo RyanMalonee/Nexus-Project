@@ -69,6 +69,9 @@ public class TasksController {
     @FXML
     private Text commentTxt;
 
+    @FXML
+    private Text destinationText;
+
     private Project project;
 
     private ProjectList projectList;
@@ -171,6 +174,19 @@ public class TasksController {
         displayProjects();
         displayTaskInfo(selectedTask);
 
+    }
+
+    @FXML
+    void onMoveTaskClicked(MouseEvent event) throws IOException {
+        String destination = destinationText.getText();
+
+        for(Column column : selectedProject.getColumns()){
+            if(column.getName().equals(destination)){
+                destination = column.getColumnType().toString();
+            }
+        }
+
+        facade.moveTaskBetweenColumns(selectedProject, destination, selectedTask);
     }
 
 }

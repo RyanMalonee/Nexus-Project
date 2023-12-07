@@ -193,5 +193,4 @@ public class ProjectInfoController {
         displayProjects();
         displayProjectInfo(facade.getProject());
     }
-
 }

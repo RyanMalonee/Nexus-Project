@@ -193,5 +193,4 @@ public class ProjectManagerFacade {
   public void addColumn(String name) {
     currentProject.addColumn(name);
   }
-  
 }
