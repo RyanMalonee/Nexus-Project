@@ -56,7 +56,7 @@
                                    
                                     <Text fx:id="assigneesText" layoutX="70.0" layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" styleClass="details" />
                                     <Text fx:id="priorityText" layoutX="60.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: Bold;" styleClass="details" />
-                                    <Text fx:id="statsusText" layoutX="50.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: Bold;" styleClass="details" />
+                                    <Text fx:id="statusText" layoutX="50.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: Bold;" styleClass="details" />
                                  </children>
                               </Pane>
                            </content>
@@ -96,14 +96,13 @@
                   <Font size="2.0" />
                </font>
             </Text>
-            <Text fx:id="changeLogText" layoutX="7.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14; -fx-fill: black; -fx-font-weight: normal;" wrappingWidth="68.00006103515625">
-               <font>
-                  <Font size="2.0" />
-               </font>
-            </Text>
          </children>
       </Pane>
+<<<<<<< HEAD
       <Button fx:id="changLog" layoutX="191.0" layoutY="430.0" mnemonicParsing="false" style="-fx-border-color: grey; -fx-background-color: white; -fx-text-fill: black; -fx-border-width: .6;" styleClass="changeLog" text="Change-Log" />
+=======
+      <Button fx:id="moveTask" layoutX="190.0" layoutY="429.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="84.0" style="-fx-border-color: grey; -fx-background-color: white; -fx-text-fill: black; -fx-border-width: .6;" styleClass="moveTask" text="Move Task" />
+>>>>>>> 412f20fafd7161654ee647eefe13653f41f9c8c5
       <Button layoutX="170.0" layoutY="55.0" mnemonicParsing="false" onMouseClicked="#goBack" styleClass="backButton" text="&lt;" />
       <TextField layoutX="543.0" layoutY="431.0" prefHeight="25.0" prefWidth="83.0" promptText="Destination" />
       <Button fx:id="moveTask" layoutX="453.0" layoutY="431.0" mnemonicParsing="false" onMouseClicked="#onMoveTaskClicked" prefHeight="27.0" prefWidth="84.0" style="-fx-border-color: grey; -fx-background-color: white; -fx-text-fill: black; -fx-border-width: .6;" styleClass="moveTask" text="Move Task" />

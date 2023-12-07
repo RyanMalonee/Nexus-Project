@@ -55,9 +55,6 @@ public class TasksController {
     private Text taskTitle;
 
     @FXML
-    private Text changeLogText;
-
-    @FXML
     private Text priorityText;
 
     @FXML
@@ -115,6 +112,14 @@ public class TasksController {
         taskTitle.setText(task.getTaskName());
         taskDescription.setText(task.getTaskDescription());
         priorityText.setText(String.valueOf(task.getTaskPriority()));
+        for (Column column : facade.getProject().getColumns()) {
+            for(Task findTask : column.getTasks()) {
+                if (task.getTaskName().equalsIgnoreCase(findTask.getTaskName())) {
+                    statusText.setText(column.getName());
+                    break;
+                }
+            }
+        }
         if (task.getAssignee() != null) {
 
             String assigneeString = task.getAssigneeString();
