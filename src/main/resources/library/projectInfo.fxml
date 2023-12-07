@@ -84,17 +84,13 @@
       <Pane layoutX="191.0" layoutY="228.0" prefHeight="238.0" prefWidth="435.0" styleClass="whiteBackground">
          <children>
             <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Tasks:" />
-<<<<<<< HEAD
             <Button fx:id="newColumnButton" layoutX="338.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#onAddColumnClicked" prefHeight="30.0" prefWidth="90.0" stylesheets="@styles.css" text="Add Column" />
             <Button fx:id="newTaskButton" layoutX="263.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#onAddTaskClicked" prefHeight="30.0" prefWidth="71.0" stylesheets="@styles.css" text="Add Task" />
-=======
-            <Button fx:id="newColumnButton" layoutX="333.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#onAddColumnClicked" prefHeight="30.0" prefWidth="95.0" stylesheets="@styles.css" text="Add Column" />
             <ScrollPane layoutY="48.0" prefHeight="190.0" prefWidth="435.0">
                <content>
                   <HBox id="columnContainer" fx:id="columnContainer" prefHeight="206.0" prefWidth="434.0" />
                </content>
             </ScrollPane>
->>>>>>> 8d443b5d131026dec0095c279fd5277e23ebc4b3
          </children>
       </Pane>
    </children>
