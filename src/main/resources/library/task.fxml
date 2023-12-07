@@ -43,9 +43,9 @@
                <content>
                   <AnchorPane id="detailPane" fx:id="detailContainer" minHeight="0.0" minWidth="0.0" prefHeight="117.0" prefWidth="173.0" styleClass="whiteBackground">
                      <children>
-                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                        <ScrollPane prefHeight="126.0" prefWidth="175.0">
                            <content>
-                              <Pane prefHeight="200.0" prefWidth="200.0">
+                              <Pane prefHeight="125.0" prefWidth="174.0">
                                  <children>
                                     <Text layoutY="10.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" styleClass="details" text="Assignees" />
                                    
@@ -72,7 +72,7 @@
                <content>
                   <AnchorPane id="commentPane" fx:id="commentContaner" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="248.0" styleClass="whiteBackground">
                      <children>
-                        <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                        <ScrollPane prefHeight="128.0" prefWidth="250.0">
                            <content>
                               <Text fx:id="commentTxt" strokeType="OUTSIDE" strokeWidth="0.0" />
                            </content>
