@@ -13,7 +13,7 @@ import library.App;
 import model.*;
 
 public class NewColumnController {
-    
+
     @FXML
     private ResourceBundle resources;
 
@@ -21,13 +21,35 @@ public class NewColumnController {
     private TextField columnName;
 
     @FXML
+    private Label errorLabel;
+
+    private ProjectManagerFacade facade;
+
+    @FXML
     void onCreateColumnClicked(MouseEvent event) throws IOException {
         String name = columnName.getText();
         if (name.isEmpty()) {
+            errorLabel = new Label("Please fill in all field with valid values.");
             return;
         }
-        ProjectManagerFacade facade = ProjectManagerFacade.getInstance();
         facade.addColumn(name);
+        ProjectList.getInstance().saveProjects();
         App.setRoot("projectInfo");
+    }
+
+    @FXML
+    void logOut(MouseEvent event) throws IOException {
+        facade.logout();
+        App.setRoot("home");
+    }
+
+    @FXML
+    void goHome(MouseEvent event) throws IOException {
+        App.setRoot("projects");
+    }
+
+    @FXML
+    void initialize() {
+        facade = ProjectManagerFacade.getInstance();
     }
 }

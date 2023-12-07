@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" styleClass="divider" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NewTaskController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" styleClass="divider" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NewColumnController">
    <children>
       <VBox layoutY="48.0" prefHeight="432.0" prefWidth="160.0" styleClass="sidePanel">
          <children>
@@ -20,7 +20,7 @@
             <Button alignment="TOP_LEFT" mnemonicParsing="false" onMouseClicked="#logOut" prefHeight="15.0" prefWidth="160.0" styleClass="menuItem" text="Log Out!" />
          </children>
       </VBox>
-      <Pane prefHeight="50.0" prefWidth="182.0" styleClass="radius">
+      <Pane onMouseClicked="#goHome" prefHeight="50.0" prefWidth="182.0" styleClass="radius">
          <children>
             <Text id="name" layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code Nexus" />
             <Text layoutX="135.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logo" text="N" />
@@ -44,11 +44,12 @@
          <children>
             <Pane layoutX="14.0" layoutY="11.0" prefHeight="395.0" prefWidth="275.0" styleClass="divider">
                <children>
-                  <TextField fx:id="taskName" layoutX="122.0" layoutY="56.0" prefHeight="10.0" prefWidth="151.0" promptText="Column Name" />
+                  <TextField fx:id="columnName" layoutX="122.0" layoutY="56.0" prefHeight="10.0" prefWidth="151.0" promptText="Column Name" />
                   <Label layoutX="14.0" layoutY="55.0" text="Name:" />
-                  <Button fx:id="createTaskButton" layoutX="14.0" layoutY="99.0" mnemonicParsing="false" onMouseClicked="#onCreateTaskClicked" prefHeight="26.0" prefWidth="151.0" styleClass="buttonForm" text="Create Column" />
+                  <Button fx:id="createTaskButton" layoutX="14.0" layoutY="99.0" mnemonicParsing="false" onMouseClicked="#onCreateColumnClicked" prefHeight="26.0" prefWidth="151.0" styleClass="buttonForm" text="Create Column" />
                   <Text id="name" layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create a New Column" />
                   <Label fx:id="errorLabel" layoutX="14.0" layoutY="316.0" prefHeight="27.0" prefWidth="396.0" />
+                  <Label fx:id="errorLabel" layoutX="211.0" layoutY="162.0" textAlignment="CENTER" />
                </children>
             </Pane>
          </children>
