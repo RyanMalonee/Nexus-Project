@@ -83,9 +83,13 @@
       </Accordion>
       <Pane layoutX="191.0" layoutY="228.0" prefHeight="238.0" prefWidth="435.0" styleClass="whiteBackground">
          <children>
-            <HBox id="columnContainer" fx:id="columnContainer" layoutX="9.0" layoutY="40.0" prefHeight="216.0" prefWidth="419.0" />
             <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Tasks:" />
-            <Button fx:id="newColumnButton" layoutX="338.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#onAddColumnClicked" prefHeight="30.0" prefWidth="90.0" stylesheets="@styles.css" text="Add Column" />
+            <Button fx:id="newColumnButton" layoutX="333.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#onAddColumnClicked" prefHeight="30.0" prefWidth="95.0" stylesheets="@styles.css" text="Add Column" />
+            <ScrollPane layoutY="48.0" prefHeight="190.0" prefWidth="435.0">
+               <content>
+                  <HBox id="columnContainer" fx:id="columnContainer" prefHeight="206.0" prefWidth="434.0" />
+               </content>
+            </ScrollPane>
          </children>
       </Pane>
    </children>
