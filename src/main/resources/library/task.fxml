@@ -16,12 +16,12 @@
    <children>
       <VBox layoutY="48.0" prefHeight="432.0" prefWidth="160.0" styleClass="sidePanel">
          <children>
-            <MenuButton fx:id="projectPanel" maxWidth="170.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="160.0" styleClass="menuItem" text="Projects" />
+            <MenuButton id="#menuItem" fx:id="projectPanel" maxWidth="170.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="160.0" styleClass="menuItem" text="Projects" />
             <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="15.0" prefWidth="160.0" styleClass="menuItem" text="Profile" />
             <Button alignment="TOP_LEFT" mnemonicParsing="false" onMouseClicked="#logOut" prefHeight="15.0" prefWidth="160.0" styleClass="menuItem" text="Log Out!" />
          </children>
       </VBox>
-      <Pane prefHeight="50.0" prefWidth="182.0" styleClass="radius">
+      <Pane onMouseClicked="#goHome" prefHeight="50.0" prefWidth="182.0" styleClass="radius">
          <children>
             <Text id="name" layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code Nexus" />
             <Text layoutX="135.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logo" text="N" />
@@ -104,5 +104,6 @@
       </Pane>
       <Button fx:id="changLog" layoutX="191.0" layoutY="430.0" mnemonicParsing="false" style="-fx-border-color: grey; -fx-background-color: white; -fx-text-fill: black; -fx-border-width: .6;" styleClass="changeLog" text="Change-Log" />
       <Button fx:id="moveTask" layoutX="292.0" layoutY="430.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="84.0" style="-fx-border-color: grey; -fx-background-color: white; -fx-text-fill: black; -fx-border-width: .6;" styleClass="moveTask" text="Move Task" />
+      <Button layoutX="170.0" layoutY="55.0" mnemonicParsing="false" onMouseClicked="#goBack" styleClass="backButton" text="&lt;" />
    </children>
 </AnchorPane>

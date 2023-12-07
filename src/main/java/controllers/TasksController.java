@@ -121,7 +121,7 @@ public class TasksController {
         }
 
         String commentText = "";
-        for (Comment comment : project.getComments()) {
+        for (Comment comment : task.getComments()) {
             commentText += "- " + comment.toString() + "\n";
         }
         commentTxt.setText(commentText);
@@ -130,6 +130,16 @@ public class TasksController {
     @FXML
     void menuItemSelected(String name) throws IOException {
         initialize();
+    }
+
+    @FXML
+    void goBack(MouseEvent event) throws IOException {
+        App.setRoot("projectInfo");
+    }
+
+    @FXML
+    void goHome(MouseEvent event) throws IOException {
+        App.setRoot("projects");
     }
 
     @FXML

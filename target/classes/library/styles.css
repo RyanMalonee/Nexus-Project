@@ -140,3 +140,14 @@
 .small-text {
   -fx-font-size: 10px;
 }
+
+.backButton {
+  -fx-border-width: 0;
+  -fx-border-color: transparent;
+  -fx-font-weight: bold;
+  -fx-padding: 3px;
+}
+
+.menuItem .menu-button .label {
+  -fx-font-size: 300px;
+}
