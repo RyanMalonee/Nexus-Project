@@ -32,6 +32,9 @@ public class NewTaskController {
     @FXML
     private Label errorLabel;
 
+    @FXML
+    private TextField taskPriority;
+
     private ProjectManagerFacade facade;
 
     @FXML
@@ -40,7 +43,13 @@ public class NewTaskController {
 
         String name = taskName.getText();
         String description = taskDescription.getText();
-        // int priority = Integer.parseInt(taskPriority.getText());
+        int priority = Integer.parseInt(taskPriority.getText());
+
+        if (name.isEmpty() || description.isEmpty() || priority < 1 || priority > 3) {
+            errorLabel = new Label("Please fill in all field with valid values.");
+            return;
+        }
+
         String assignee = this.taskAssignee.getText();
 
         ProjectManagerFacade facade = ProjectManagerFacade.getInstance();
@@ -57,7 +66,7 @@ public class NewTaskController {
         Task task = new Task(name, description, 1, assigneeUser);
         facade.addTask(currentProject, 0, task);
 
-        App.setRoot("projectinfo");
+        App.setRoot("projectInfo");
     }
 
     @FXML

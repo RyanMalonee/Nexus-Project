@@ -129,7 +129,16 @@ public class TasksController {
 
     @FXML
     void menuItemSelected(String name) throws IOException {
-        initialize();
+        Project newProject = null;
+        for (Project project : projectList.getProjects()) {
+            if (project.getProjectName().equalsIgnoreCase(name)) {
+                newProject = project;
+            }
+        }
+        if (newProject != null) {
+            facade.setProject(newProject);
+        }
+        App.setRoot("projectInfo");
     }
 
     @FXML

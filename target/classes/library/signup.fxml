@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -31,7 +32,7 @@
                   </Text>
                   <HBox alignment="CENTER" prefHeight="18.0" prefWidth="382.0">
                      <children>
-                        <Label text="First Name: ">
+                        <Label text="First Name:">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
@@ -47,7 +48,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="18.0" prefWidth="382.0">
                      <children>
-                        <Label text="Last Name: ">
+                        <Label text="Last Name:">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
@@ -79,7 +80,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="18.0" prefWidth="382.0">
                      <children>
-                        <Label text="Email:          ">
+                        <Label prefHeight="21.0" prefWidth="151.0" text="Email:         ">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
@@ -95,7 +96,7 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="18.0" prefWidth="382.0">
                      <children>
-                        <Label text="Password:   ">
+                        <Label prefHeight="21.0" prefWidth="151.0" text="Password:">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
@@ -103,7 +104,7 @@
                               <Insets right="50.0" />
                            </padding>
                         </Label>
-                        <TextField fx:id="passwordTxt" prefHeight="10.0" prefWidth="151.0" promptText="Password" />
+                        <PasswordField fx:id="passwordTxt" prefHeight="10.0" prefWidth="151.0" promptText="Password" />
                      </children>
                      <VBox.margin>
                         <Insets top="5.0" />

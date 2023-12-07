@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import library.App;
@@ -32,7 +33,7 @@ public class SignupController {
     private Button loginButton;
 
     @FXML
-    private TextField passwordTxt;
+    private PasswordField passwordTxt;
 
     @FXML
     private TextField userNameTxt;
