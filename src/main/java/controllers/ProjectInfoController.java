@@ -167,6 +167,11 @@ public class ProjectInfoController {
     }
 
     @FXML
+    void goHome(MouseEvent event) throws IOException {
+        App.setRoot("projects");
+    }
+
+    @FXML
     void initialize() {
         assert DetailPane != null : "fx:id=\"DetailPane\" was not injected: check your FXML file 'projectInfo.fxml'.";
         assert columnContainer != null

@@ -21,7 +21,7 @@
             <Button alignment="TOP_LEFT" mnemonicParsing="false" onMouseClicked="#logOut" prefHeight="15.0" prefWidth="160.0" styleClass="menuItem" text="Log Out!" />
          </children>
       </VBox>
-      <Pane prefHeight="50.0" prefWidth="182.0" styleClass="radius">
+      <Pane onMouseClicked="#goHome" prefHeight="50.0" prefWidth="182.0" styleClass="radius">
          <children>
             <Text id="name" layoutX="14.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code Nexus" />
             <Text layoutX="135.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logo" text="N" />
