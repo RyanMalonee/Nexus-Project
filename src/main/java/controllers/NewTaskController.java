@@ -39,7 +39,6 @@ public class NewTaskController {
 
     @FXML
     void onCreateTaskClicked(MouseEvent event) throws IOException {
-        boolean invalidUser = false;
 
         String name = taskName.getText();
         String description = taskDescription.getText();
@@ -58,7 +57,6 @@ public class NewTaskController {
         User assigneeUser = facade.getUserFromProject(assignee, currentProject);
 
         if (assigneeUser == null) {
-            invalidUser = true;
             errorLabel = new Label("The user you entered is not a member of this project");
             return;
         }
