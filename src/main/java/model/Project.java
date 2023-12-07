@@ -200,6 +200,10 @@ public class Project {
     return this.uuid;
   }
 
+  public ArrayList<User> getUsers() {
+    return this.teamMembers;
+  }
+
   /**
    * Gets the name of the project.
    *

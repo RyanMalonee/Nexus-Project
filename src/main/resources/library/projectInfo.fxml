@@ -85,6 +85,7 @@
          <children>
             <HBox id="columnContainer" fx:id="columnContainer" layoutX="9.0" layoutY="30.0" prefHeight="226.0" prefWidth="419.0" />
             <Text layoutX="9.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Tasks:" />
+            <Button fx:id="newTaskButton" layoutX="362.0" layoutY="-1.0" mnemonicParsing="false" onMouseClicked="#onNewTaskClicked" prefHeight="30.0" prefWidth="73.0" text="New Task" />
          </children>
       </Pane>
    </children>

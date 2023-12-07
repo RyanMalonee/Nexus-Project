@@ -137,7 +137,7 @@ public class ProjectInfoController {
 
                 scrollPane.setOnMouseClicked(event -> {
                     try {
-                        TaskController.setTask(task);
+                        // TaskController.setTask(task);
                         App.setRoot("taskInfo");
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -159,6 +159,11 @@ public class ProjectInfoController {
             facade.setProject(newProject);
         }
         initialize();
+    }
+
+    @FXML
+    void onNewTaskClicked(MouseEvent event) throws IOException {
+        App.setRoot("newTask");
     }
 
     @FXML

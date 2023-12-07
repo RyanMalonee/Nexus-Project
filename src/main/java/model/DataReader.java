@@ -42,7 +42,7 @@ public class DataReader extends DataConstants {
                 users.add(new User(uuid, firstName, lastName, userName, email, password, permissionLevel,
                         tasksCompleted));
             }
-            users.toString();
+            System.out.println(users.get(0).getFirstName());
             return users;
 
         } catch (Exception e) {
@@ -176,26 +176,6 @@ public class DataReader extends DataConstants {
                 JSONArray commentsJSON = (JSONArray) taskJSON.get(COMMENTS);
                 // Calls recurisve method to handle recursive comments/replies
                 getComments(commentsJSON, comments);
-
-                if(taskJSON.containsKey(TASK_REQUIREMENTS)) {
-                    JSONArray requirementsJSON = (JSONArray) taskJSON.get(TASK_REQUIREMENTS);
-                    ArrayList<String> requirements = new ArrayList<String>();
-                    for (int i = 0; i < requirementsJSON.size(); i++) {
-                        requirements.add((String) requirementsJSON.get(i));
-                    }
-                    NewFeature NewFeature = new NewFeature(requirements, taskName, taskDescription, taskPriority,
-                            assignee);
-                    tasks.add(NewFeature);
-                    continue;
-                }
-                if(taskJSON.containsKey(BUG_DESCRIPTION) && taskJSON.containsKey(BUG_REPRODUCTION_STEPS)) {
-                    String bugDescription = (String) taskJSON.get(BUG_DESCRIPTION);
-                    String bugReproductionSteps = (String) taskJSON.get(BUG_REPRODUCTION_STEPS);
-                    BugFix bugFix = new BugFix(taskName, taskDescription, taskPriority, assignee, bugDescription,
-                            bugReproductionSteps);
-                    tasks.add(bugFix);
-                    continue;
-                }
 
                 Task task = new Task(taskUUID, taskName, taskDescription, taskPriority,
                         assignee, comments);

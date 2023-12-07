@@ -100,6 +100,18 @@ public class ProjectManagerFacade {
     project.removeUser(user);
   }
 
+  public User getUserFromProject(String userName, Project project) {
+    UserList users = UserList.getInstance();
+    ArrayList<User> userList = users.getUsers();
+
+    for (int i = 0; i < userList.size(); i++) {
+      if (userList.get(i).getUserName().equals(userName) && project.getUsers().contains(userList.get(i))) {
+        return userList.get(i);
+      }
+    }
+    return null;
+  }
+
   /**
    * Creates a new project with the given details.
    *
