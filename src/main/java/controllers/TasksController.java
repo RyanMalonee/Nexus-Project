@@ -194,6 +194,7 @@ public class TasksController {
         }
 
         facade.moveTaskBetweenColumns(selectedProject, destination, selectedTask);
+        projectList.saveProjects();
     }
 
 }

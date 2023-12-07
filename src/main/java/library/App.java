@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.ProjectList;
+import model.UserList;
 
 import java.io.IOException;
 
@@ -20,6 +22,12 @@ public class App extends Application {
         scene = new Scene(loadFXML("home"), 905, 679);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @Override
+    public void stop() throws IOException {
+        ProjectList.getInstance().saveProjects();
+        UserList.getInstance().saveUsers();
     }
 
     public static void setRoot(String fxml) throws IOException {
