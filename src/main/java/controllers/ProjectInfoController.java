@@ -108,7 +108,7 @@ public class ProjectInfoController {
         teamMembersTxt.setText(teamMembers);
         detailTxt.setText(project.getSprintTime() + " " + project.getSprintUnits());
 
-        String commentText = "";
+        String commentText = "\n";
         for (Comment comment : project.getComments()) {
             commentText += "- " + comment.toString() + "\n";
         }
@@ -120,19 +120,23 @@ public class ProjectInfoController {
             columnContainer.getChildren().add(hbox);
 
             VBox vbox = new VBox();
+            vbox.setPrefWidth(150);
+            vbox.setSpacing(5);
+            vbox.getStyleClass().add("columnTasks");
+
             hbox.getChildren().add(vbox);
             hbox.getStyleClass().add("columns");
 
             Label label = new Label(column.getName());
-            label.getStyleClass().add("small-text");
+            label.getStyleClass().add("columnNames");
 
             vbox.getChildren().add(label);
 
             for (Task task : column.getTasks()) {
                 ScrollPane scrollPane = new ScrollPane();
                 scrollPane.setPrefSize(300, 50);
-                Label taskLabel = new Label(task.getTaskName() + "\n" + task.getTaskDescription());
-                taskLabel.getStyleClass().add("small-text");
+                Label taskLabel = new Label(task.getTaskName());
+                taskLabel.getStyleClass().add("taskText");
                 scrollPane.setContent(taskLabel);
                 vbox.getChildren().add(scrollPane);
 

@@ -114,7 +114,7 @@ public class TasksController {
         taskDescription.setText(task.getTaskDescription());
         priorityText.setText(String.valueOf(task.getTaskPriority()));
         for (Column column : facade.getProject().getColumns()) {
-            for(Task findTask : column.getTasks()) {
+            for (Task findTask : column.getTasks()) {
                 if (task.getTaskName().equalsIgnoreCase(findTask.getTaskName())) {
                     statusText.setText(column.getName());
                     break;
@@ -129,7 +129,7 @@ public class TasksController {
 
         }
 
-        String commentText = "";
+        String commentText = "\n";
         for (Comment comment : task.getComments()) {
             commentText += "- " + comment.toString() + "\n";
         }
@@ -186,8 +186,8 @@ public class TasksController {
     void onMoveTaskClicked(MouseEvent event) throws IOException {
         String destination = destinationText.getText();
 
-        for(Column column : selectedProject.getColumns()){
-            if(column.getName().equals(destination)){
+        for (Column column : selectedProject.getColumns()) {
+            if (column.getName().equals(destination)) {
                 destination = column.getName();
             }
         }

@@ -11,25 +11,25 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="477.0" prefWidth="673.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+<AnchorPane prefHeight="679.0" prefWidth="905.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
    <children>
-      <Pane layoutX="133.0" layoutY="82.0" prefHeight="313.0" prefWidth="407.0" styleClass="divider">
+      <Pane layoutX="193.0" layoutY="123.0" prefHeight="418.0" prefWidth="527.0" styleClass="divider">
          <children>
-            <TextField fx:id="usernameTxt" layoutX="200.0" layoutY="94.0" prefHeight="10.0" prefWidth="151.0" promptText="Username" />
-            <Text layoutX="181.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" textAlignment="CENTER" />
-            <Label layoutX="110.0" layoutY="98.0" text="Username:" />
-            <Label layoutX="110.0" layoutY="140.0" text="Password:" />
-            <Button fx:id="loginButton" layoutX="127.0" layoutY="188.0" mnemonicParsing="false" onMouseClicked="#onLoginClicked" prefHeight="26.0" prefWidth="151.0" styleClass="buttonForm" text="Login" />
-            <Text layoutX="197.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="or" />
-            <Hyperlink accessibleRole="BUTTON" layoutX="175.0" layoutY="248.0" onMouseClicked="#onSignupClicked" text="Sign Up" />
-            <Label fx:id="errorLabel" alignment="CENTER" layoutX="40.0" layoutY="283.0" prefHeight="16.0" prefWidth="329.0" styleClass="error" textAlignment="CENTER" />
-            <Text layoutX="14.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code Nexus Project Management">
+            <TextField fx:id="usernameTxt" layoutX="260.0" layoutY="119.0" prefHeight="10.0" prefWidth="151.0" promptText="Username" />
+            <Text layoutX="239.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="biggerText" text="Login" textAlignment="CENTER" />
+            <Label layoutX="162.0" layoutY="121.0" text="Username: " />
+            <Label layoutX="161.0" layoutY="175.0" text="Password:" />
+            <Button fx:id="loginButton" layoutX="188.0" layoutY="226.0" mnemonicParsing="false" onMouseClicked="#onLoginClicked" prefHeight="26.0" prefWidth="151.0" styleClass="buttonForm" text="Login" />
+            <Text layoutX="253.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="biggerText" text="or" />
+            <Hyperlink accessibleRole="BUTTON" layoutX="222.0" layoutY="320.0" onMouseClicked="#onSignupClicked" styleClass="biggerText" text="Sign Up" />
+            <Label fx:id="errorLabel" alignment="CENTER" layoutX="93.0" layoutY="377.0" prefHeight="16.0" prefWidth="329.0" styleClass="error" textAlignment="CENTER" />
+            <Text layoutX="80.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Code Nexus Project Management">
                <styleClass>
                   <String fx:value="header" />
                   <String fx:value="title" />
                </styleClass>
             </Text>
-            <PasswordField fx:id="passwordTxt" layoutX="200.0" layoutY="136.0" prefHeight="10.0" prefWidth="151.0" promptText="Password" />
+            <PasswordField fx:id="passwordTxt" layoutX="260.0" layoutY="173.0" prefHeight="10.0" prefWidth="151.0" promptText="Password" />
          </children>
       </Pane>
    </children>

@@ -13,9 +13,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" styleClass="divider" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TasksController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="679.0" prefWidth="905.0" styleClass="divider" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TasksController">
    <children>
-      <VBox layoutY="48.0" prefHeight="432.0" prefWidth="160.0" styleClass="sidePanel">
+      <VBox layoutY="48.0" prefHeight="632.0" prefWidth="160.0" styleClass="sidePanel">
          <children>
             <MenuButton id="#menuItem" fx:id="projectPanel" maxWidth="170.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="160.0" styleClass="menuItem" text="Projects" />
             <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="15.0" prefWidth="160.0" styleClass="menuItem" text="Profile" />
@@ -28,9 +28,9 @@
             <Text layoutX="135.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logo" text="N" />
          </children>
       </Pane>
-      <Pane layoutX="191.0" layoutY="6.0" prefHeight="50.0" prefWidth="435.0" styleClass="namePane">
+      <Pane layoutX="191.0" layoutY="6.0" prefHeight="50.0" prefWidth="705.0" styleClass="namePane">
          <children>
-            <Text fx:id="taskTitle" layoutX="11.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold; -fx-font-size: 15;" wrappingWidth="412.0000305175781">
+            <Text fx:id="taskTitle" layoutX="11.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold; -fx-font-size: 15;" wrappingWidth="666.4085388183594">
                <styleClass>
                   <String fx:value="accentText" />
                   <String fx:value="mediumText" />
@@ -40,7 +40,7 @@
       </Pane>
       <Accordion layoutX="191.0" layoutY="71.0" prefHeight="150.0" prefWidth="175.0">
          <panes>
-            <TitledPane fx:id="DetailPane" animated="false" prefHeight="180.0" prefWidth="175.0" styleClass="accordion" text="Details">
+            <TitledPane fx:id="DetailPane" animated="false" expanded="false" prefHeight="180.0" prefWidth="175.0" styleClass="accordion" text="Details">
                <content>
                   <AnchorPane id="detailPane" fx:id="detailContainer" minHeight="0.0" minWidth="0.0" prefHeight="117.0" prefWidth="173.0" styleClass="whiteBackground">
                      <children>
@@ -67,13 +67,13 @@
             </TitledPane>
          </panes>
       </Accordion>
-      <Accordion layoutX="376.0" layoutY="71.0" prefHeight="150.0">
+      <Accordion layoutX="376.0" layoutY="71.0" prefHeight="150.0" prefWidth="514.0">
          <panes>
-            <TitledPane fx:id="commentPane" animated="false" prefWidth="250.0" styleClass="accordion" text="Comments">
+            <TitledPane fx:id="commentPane" animated="false" expanded="false" prefWidth="250.0" styleClass="accordion" text="Comments">
                <content>
                   <AnchorPane id="commentPane" fx:id="commentContaner" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="248.0" styleClass="whiteBackground">
                      <children>
-                        <ScrollPane prefHeight="128.0" prefWidth="250.0">
+                        <ScrollPane prefHeight="128.0" prefWidth="514.0">
                            <content>
                               <Text fx:id="commentTxt" strokeType="OUTSIDE" strokeWidth="0.0" />
                            </content>
@@ -84,12 +84,16 @@
             </TitledPane>
          </panes>
       </Accordion>
-      <Pane layoutX="191.0" layoutY="228.0" prefHeight="186.0" prefWidth="435.0" styleClass="whiteBackground">
+      <Pane layoutX="191.0" layoutY="228.0" prefHeight="373.0" prefWidth="700.0" styleClass="whiteBackground">
          <children>
-            <Text layoutX="7.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14;" styleClass="label" text="Information:">
+            <Text layoutX="7.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14;" text="Information:">
                <font>
                   <Font size="2.0" />
                </font>
+               <styleClass>
+                  <String fx:value="label" />
+                  <String fx:value="biggerText" />
+               </styleClass>
             </Text>
             <Text fx:id="taskDescription" layoutX="6.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 14; -fx-fill: black; -fx-font-weight: normal;" wrappingWidth="422.8000183105469">
                <font>
@@ -98,9 +102,9 @@
             </Text>
          </children>
       </Pane>
-      <Button fx:id="changLog" layoutX="191.0" layoutY="430.0" mnemonicParsing="false" style="-fx-border-color: grey; -fx-background-color: white; -fx-text-fill: black; -fx-border-width: .6;" styleClass="changeLog" text="Change-Log" />
-      <Button layoutX="170.0" layoutY="55.0" mnemonicParsing="false" onMouseClicked="#goBack" styleClass="backButton" text="&lt;" />
-      <TextField fx:id="destinationText" layoutX="543.0" layoutY="431.0" prefHeight="25.0" prefWidth="83.0" promptText="Destination" />
-      <Button fx:id="moveTask" layoutX="453.0" layoutY="431.0" mnemonicParsing="false" onMouseClicked="#onMoveTaskClicked" prefHeight="27.0" prefWidth="84.0" style="-fx-border-color: grey; -fx-background-color: white; -fx-text-fill: black; -fx-border-width: .6;" styleClass="moveTask" text="Move Task" />
+      <Button fx:id="changLog" layoutX="191.0" layoutY="624.0" mnemonicParsing="false" style="-fx-border-color: grey; -fx-background-color: white; -fx-text-fill: black; -fx-border-width: .6;" styleClass="changeLog" text="Change-Log" />
+      <Button layoutX="164.0" layoutY="55.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="39.0" prefWidth="23.0" styleClass="backButton" text="&lt;" />
+      <TextField fx:id="destinationText" layoutX="781.0" layoutY="630.0" prefHeight="25.0" prefWidth="83.0" promptText="Destination" />
+      <Button fx:id="moveTask" layoutX="644.0" layoutY="624.0" mnemonicParsing="false" onMouseClicked="#onMoveTaskClicked" prefHeight="34.0" prefWidth="119.0" style="-fx-border-color: grey; -fx-background-color: white; -fx-text-fill: black; -fx-border-width: .6;" styleClass="moveTask" text="Move Task" />
    </children>
 </AnchorPane>

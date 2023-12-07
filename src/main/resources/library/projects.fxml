@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" styleClass="divider" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProjectsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="679.0" prefWidth="905.0" styleClass="divider" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProjectsController">
    <children>
-      <VBox layoutX="-2.0" layoutY="50.0" prefHeight="429.0" prefWidth="160.0" styleClass="sidePanel">
+      <VBox layoutX="-2.0" layoutY="50.0" prefHeight="629.0" prefWidth="160.0" styleClass="sidePanel">
          <children>
             <MenuButton fx:id="projectPanel" maxWidth="170.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="160.0" styleClass="menuItem" text="Projects" />
             <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="15.0" prefWidth="160.0" styleClass="menuItem" text="Profile" />
@@ -24,12 +24,12 @@
             <Text layoutX="135.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logo" text="N" />
          </children>
       </Pane>
-      <Text layoutX="327.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Projects">
+      <Text layoutX="473.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Projects">
          <styleClass>
             <String fx:value="header" />
             <String fx:value="big" />
          </styleClass>
       </Text>
-      <ListView fx:id="projectContainer" layoutX="177.0" layoutY="73.0" onMouseClicked="#projectSelected" prefHeight="398.0" prefWidth="451.0" />
+      <ListView fx:id="projectContainer" layoutX="190.0" layoutY="84.0" onMouseClicked="#projectSelected" prefHeight="577.0" prefWidth="702.0" />
    </children>
 </AnchorPane>

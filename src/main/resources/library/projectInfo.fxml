@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" styleClass="divider" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProjectInfoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="679.0" prefWidth="905.0" styleClass="divider" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProjectInfoController">
    <children>
-      <VBox layoutY="48.0" prefHeight="432.0" prefWidth="160.0" styleClass="sidePanel">
+      <VBox layoutY="48.0" prefHeight="632.0" prefWidth="160.0" styleClass="sidePanel">
          <children>
             <MenuButton fx:id="projectPanel" maxWidth="170.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="160.0" styleClass="menuItem" text="Projects" />
             <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="15.0" prefWidth="160.0" styleClass="menuItem" text="Profile" />
@@ -27,7 +27,7 @@
             <Text layoutX="135.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logo" text="N" />
          </children>
       </Pane>
-      <Pane layoutX="191.0" layoutY="6.0" prefHeight="50.0" prefWidth="435.0" styleClass="namePane">
+      <Pane layoutX="191.0" layoutY="6.0" prefHeight="50.0" prefWidth="702.0" styleClass="namePane">
          <children>
             <Text fx:id="projectTitle" layoutX="14.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0">
                <styleClass>
@@ -38,15 +38,15 @@
             <Text fx:id="projectDescription" layoutX="14.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="accentText" />
          </children>
       </Pane>
-      <Accordion layoutX="191.0" layoutY="71.0" prefHeight="150.0" prefWidth="175.0">
+      <Accordion layoutX="191.0" layoutY="71.0" prefHeight="150.0" prefWidth="182.0">
         <panes>
-          <TitledPane fx:id="DetailPane" animated="false" prefHeight="180.0" prefWidth="175.0" styleClass="accordion" text="Details">
+          <TitledPane fx:id="DetailPane" animated="false" expanded="false" prefHeight="180.0" prefWidth="175.0" styleClass="accordion" text="Details">
             <content>
               <AnchorPane id="detailPane" fx:id="detailContainer" minHeight="0.0" minWidth="0.0" prefHeight="117.0" prefWidth="173.0" styleClass="whiteBackground">
                      <children>
-                        <ScrollPane layoutY="-3.0" prefHeight="129.0" prefWidth="175.0">
+                        <ScrollPane layoutY="-3.0" prefHeight="129.0" prefWidth="182.0">
                            <content>
-                              <Pane prefHeight="134.0" prefWidth="173.0">
+                              <Pane prefHeight="134.0" prefWidth="215.0">
                                  <children>
                                     <Text layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sprint Time:" />
                                     <Text fx:id="detailTxt" layoutX="75.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" />
@@ -64,13 +64,13 @@
           </TitledPane>
         </panes>
       </Accordion>
-      <Accordion layoutX="376.0" layoutY="71.0" prefHeight="150.0">
+      <Accordion layoutX="388.0" layoutY="71.0" prefHeight="150.0" prefWidth="503.0">
          <panes>
-            <TitledPane fx:id="commentPane" animated="false" prefWidth="250.0" styleClass="accordion" text="Comments">
+            <TitledPane fx:id="commentPane" animated="false" expanded="false" prefHeight="150.0" prefWidth="503.0" styleClass="accordion" text="Comments">
                <content>
-                  <AnchorPane id="commentPane" fx:id="commentContaner" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="248.0" styleClass="whiteBackground">
+                  <AnchorPane id="commentPane" fx:id="commentContaner" minHeight="0.0" minWidth="0.0" prefHeight="126.0" prefWidth="520.0" styleClass="whiteBackground">
                      <children>
-                        <ScrollPane prefHeight="133.0" prefWidth="250.0">
+                        <ScrollPane prefHeight="129.0" prefWidth="503.0">
                            <content>
                               <Text fx:id="commentTxt" strokeType="OUTSIDE" strokeWidth="0.0" />
                            </content>
@@ -79,18 +79,17 @@
                   </AnchorPane>
                </content>
             </TitledPane>
-         </panes>
-      </Accordion>
-      <Pane layoutX="191.0" layoutY="228.0" prefHeight="238.0" prefWidth="435.0" styleClass="whiteBackground">
+         </panes></Accordion>
+      <Pane layoutX="191.0" layoutY="239.0" prefHeight="400.0" prefWidth="695.0" styleClass="whiteBackground">
          <children>
-            <Text layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="label" text="Tasks:" />
-            <Button fx:id="newColumnButton" layoutX="338.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#onAddColumnClicked" prefHeight="30.0" prefWidth="90.0" stylesheets="@styles.css" text="Add Column" />
-            <Button fx:id="newTaskButton" layoutX="263.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#onAddTaskClicked" prefHeight="30.0" prefWidth="71.0" stylesheets="@styles.css" text="Add Task" />
-            <ScrollPane layoutY="48.0" prefHeight="190.0" prefWidth="435.0">
-               <content>
-                  <HBox id="columnContainer" fx:id="columnContainer" prefHeight="206.0" prefWidth="434.0" />
-               </content>
-            </ScrollPane>
+            <HBox id="columnContainer" fx:id="columnContainer" alignment="CENTER_LEFT" layoutY="52.0" maxWidth="700.0" prefHeight="347.0" prefWidth="699.0" />
+            <Text layoutX="16.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tasks:">
+               <styleClass>
+                  <String fx:value="label" />
+                  <String fx:value="biggerText" />
+               </styleClass></Text>
+            <Button fx:id="newColumnButton" layoutX="528.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#onAddColumnClicked" prefHeight="37.0" prefWidth="150.0" stylesheets="@styles.css" text="Add Column" />
+            <Button fx:id="newTaskButton" layoutX="405.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#onAddTaskClicked" prefHeight="37.0" prefWidth="114.0" stylesheets="@styles.css" text="Add Task" />
          </children>
       </Pane>
    </children>

@@ -2,11 +2,14 @@ package controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import library.App;
@@ -22,6 +25,9 @@ public class NewTaskController {
 
     @FXML
     private TextField taskDescription;
+
+    @FXML
+    private MenuButton projectPanel;
 
     // @FXML
     // private TextField taskPriority;
@@ -77,8 +83,51 @@ public class NewTaskController {
     }
 
     @FXML
+    void onCancelClicked(MouseEvent event) throws IOException {
+        App.setRoot("projectInfo");
+    }
+
+    @FXML
+    private void displayProjects() {
+        ArrayList<Project> projects = projectList.getProjectsByUser(facade.getCurrentUser());
+        projectPanel.getItems().clear();
+        for (Project project : projects) {
+            MenuItem item = new MenuItem();
+            item.setText(project.getProjectName());
+            projectPanel.getItems().add(item);
+            item.setOnAction(event -> {
+                try {
+                    menuItemSelected(item.getText());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+    }
+
+    @FXML
+    void menuItemSelected(String name) throws IOException {
+        Project newProject = null;
+        for (Project project : projectList.getProjects()) {
+            if (project.getProjectName().equalsIgnoreCase(name)) {
+                newProject = project;
+            }
+        }
+        if (newProject != null) {
+            facade.setProject(newProject);
+        }
+        App.setRoot("projectInfo");
+    }
+
+    @FXML
+    void goHome(MouseEvent event) throws IOException {
+        App.setRoot("projects");
+    }
+
+    @FXML
     void initialize() {
         facade = ProjectManagerFacade.getInstance();
         projectList = ProjectList.getInstance();
+        displayProjects();
     }
 }

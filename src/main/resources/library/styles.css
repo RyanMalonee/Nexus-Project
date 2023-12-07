@@ -15,7 +15,7 @@
 }
 
 .logoBig {
-  -fx-font-size: 250px;
+  -fx-font-size: 400px;
   -fx-font-weight: bold;
 }
 
@@ -44,6 +44,7 @@
   -fx-text-fill: -primary-color;
   -fx-border-color: -primary-color;
   -fx-border-width: 2px;
+  -fx-font-size: 18px;
 }
 
 .buttonForm {
@@ -62,7 +63,7 @@
   -fx-border-width: 0;
   -fx-text-fill: #1784fc;
   -fx-fill: #1784fc;
-  -fx-font-size: 10px;
+  -fx-font-size: 14px;
   -fx-background-color: #c8d1d0;
 }
 
@@ -135,6 +136,21 @@
 
 .columns {
   -fx-padding: 5px;
+  -fx-background-color: -primary-color;
+}
+
+.columnTasks {
+  -fx-background-color: white;
+}
+
+.columnNames {
+  -fx-font-size: 12px;
+  -fx-font-weight: bold;
+}
+
+.taskText {
+  -fx-font-size: 10px;
+  -fx-font-weight: bold;
 }
 
 .small-text {
@@ -148,6 +164,11 @@
   -fx-padding: 3px;
 }
 
-.menuItem .menu-button .label {
-  -fx-font-size: 300px;
+.biggerText {
+  -fx-font-size: 20px;
+}
+
+.whiteText {
+  -fx-text-fill: white;
+  -fx-fill: white;
 }
