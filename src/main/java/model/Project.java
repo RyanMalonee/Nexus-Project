@@ -1,4 +1,5 @@
 package model;
+
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -357,16 +358,18 @@ public class Project {
         if (newPosition.equalsIgnoreCase("Completed")) {
           task.getAssignee().addTaskCompletion();
         }
-        for (Column columnObject : columns) {
-          if (columnObject.getTasks().contains(task)) {
-            columnObject.getTasks().remove(task);
-            break;
-          }
-        }
         result = true;
         break;
       } else {
         result = false;
+      }
+    }
+    if (result) {
+      for (Column column : columns) {
+        if (!column.getName().equals(newPosition) && column.getTasks().contains(task)) {
+          column.getTasks().remove(task);
+          break;
+        }
       }
     }
     return result;

@@ -85,7 +85,6 @@ public class TasksController {
 
     public static void setTask(Task task, Project project) {
         selectedTask = task;
-        selectedProject = project;
     }
 
     @FXML
@@ -177,6 +176,7 @@ public class TasksController {
         assert taskTitle != null : "fx:id=\"projectTitle\" was not injected: check your FXML file 'projectInfo.fxml'.";
         facade = ProjectManagerFacade.getInstance();
         projectList = ProjectList.getInstance();
+        selectedProject = facade.getProject();
         displayProjects();
         displayTaskInfo(selectedTask);
 
@@ -189,6 +189,7 @@ public class TasksController {
         for (Column column : selectedProject.getColumns()) {
             if (column.getName().equals(destination)) {
                 destination = column.getName();
+                statusText.setText(column.getName());
             }
         }
 
