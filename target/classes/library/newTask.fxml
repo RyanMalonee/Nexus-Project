@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.DropdownButton?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" styleClass="divider" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ProjectInfoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" styleClass="divider" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NewTaskController">
    <children>
       <VBox layoutY="48.0" prefHeight="432.0" prefWidth="160.0" styleClass="sidePanel">
          <children>
@@ -42,9 +40,9 @@
       </Pane>
       <Accordion layoutX="191.0" layoutY="71.0" prefHeight="150.0" prefWidth="175.0" />
       <Accordion layoutX="376.0" layoutY="71.0" prefHeight="150.0" />
-      <Pane layoutX="-10.0" layoutY="72.0" prefHeight="417.0" prefWidth="640.0">
+      <Pane layoutX="175.0" layoutY="72.0" prefHeight="401.0" prefWidth="455.0">
          <children>
-            <Pane layoutX="182.0" prefHeight="395.0" prefWidth="449.0" styleClass="divider">
+            <Pane layoutX="14.0" layoutY="11.0" prefHeight="395.0" prefWidth="275.0" styleClass="divider">
                <children>
                   <TextField fx:id="taskName" layoutX="122.0" layoutY="56.0" prefHeight="10.0" prefWidth="151.0" promptText="Task name" />
                   <TextField fx:id="taskDescription" layoutX="122.0" layoutY="90.0" prefHeight="10.0" prefWidth="151.0" promptText="Task description" />
@@ -55,15 +53,6 @@
                   <Label layoutX="14.0" layoutY="157.0" text="Priority:" />
                   <TextField fx:id="taskAssignee" layoutX="122.0" layoutY="123.0" prefHeight="10.0" prefWidth="151.0" promptText="Task description" />
                   <Label layoutX="14.0" layoutY="122.0" text="Assignee:" />
-                  <DropdownButton id="taskPriority" fx:id="taskPriority" layoutX="122.0" layoutY="157.0">
-                      <items>
-                          <MenuItem text="1" />
-                          <MenuItem text="2" />
-                          <MenuItem text="3" />
-                          <MenuItem text="4" />
-                          <MenuItem text="5" />
-                      </items>
-                  </DropdownButton>
                   <Label fx:id="errorLabel" layoutX="14.0" layoutY="316.0" prefHeight="27.0" prefWidth="396.0" />
                </children>
             </Pane>

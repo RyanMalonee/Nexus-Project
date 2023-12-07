@@ -23,14 +23,16 @@ public class NewTaskController {
     @FXML
     private TextField taskDescription;
 
-    @FXML
-    private TextField taskPriority;
+    // @FXML
+    // private TextField taskPriority;
 
     @FXML
     private TextField taskAssignee;
 
     @FXML
-    private TextField errorLabel;
+    private Label errorLabel;
+
+    private ProjectManagerFacade facade;
 
     @FXML
     void onCreateTaskClicked(MouseEvent event) throws IOException {
@@ -38,7 +40,7 @@ public class NewTaskController {
 
         String name = taskName.getText();
         String description = taskDescription.getText();
-        int priority = Integer.parseInt(taskPriority.getText());
+        // int priority = Integer.parseInt(taskPriority.getText());
         String assignee = this.taskAssignee.getText();
 
         ProjectManagerFacade facade = ProjectManagerFacade.getInstance();
@@ -46,15 +48,26 @@ public class NewTaskController {
         Project currentProject = facade.getProject();
         User assigneeUser = facade.getUserFromProject(assignee, currentProject);
 
-        if(assigneeUser == null) {
+        if (assigneeUser == null) {
             invalidUser = true;
-            errorLabel.setText("The user you entered is not a member of this project");
+            errorLabel = new Label("The user you entered is not a member of this project");
+            return;
         }
 
-        Task task = new Task(name, description, priority, assigneeUser);
+        Task task = new Task(name, description, 1, assigneeUser);
         facade.addTask(currentProject, 0, task);
 
         App.setRoot("projectinfo");
     }
 
+    @FXML
+    void logOut(MouseEvent event) throws IOException {
+        facade.logout();
+        App.setRoot("home");
+    }
+
+    @FXML
+    void initialize() {
+        facade = ProjectManagerFacade.getInstance();
+    }
 }
