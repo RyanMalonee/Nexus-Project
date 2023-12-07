@@ -189,4 +189,9 @@ public class ProjectManagerFacade {
   public Project getProject() {
     return currentProject;
   }
+
+  public void addColumn(String name) {
+    currentProject.addColumn(name);
+  }
+  
 }

@@ -37,9 +37,10 @@ public class NewTaskController {
 
     private ProjectManagerFacade facade;
 
+    private ProjectList projectList;
+
     @FXML
     void onCreateTaskClicked(MouseEvent event) throws IOException {
-        boolean invalidUser = false;
 
         String name = taskName.getText();
         String description = taskDescription.getText();
@@ -58,14 +59,14 @@ public class NewTaskController {
         User assigneeUser = facade.getUserFromProject(assignee, currentProject);
 
         if (assigneeUser == null) {
-            invalidUser = true;
             errorLabel = new Label("The user you entered is not a member of this project");
             return;
         }
 
         Task task = new Task(name, description, 1, assigneeUser);
-        facade.addTask(currentProject, 0, task);
+        facade.addTask(currentProject, 1, task);
 
+        projectList.saveProjects();
         App.setRoot("projectInfo");
     }
 
@@ -78,5 +79,6 @@ public class NewTaskController {
     @FXML
     void initialize() {
         facade = ProjectManagerFacade.getInstance();
+        projectList = ProjectList.getInstance();
     }
 }
