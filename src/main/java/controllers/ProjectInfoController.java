@@ -167,6 +167,11 @@ public class ProjectInfoController {
     }
 
     @FXML
+    void onAddTaskClicked(MouseEvent event) throws IOException {
+        App.setRoot("newTask");
+    }
+
+    @FXML
     void goHome(MouseEvent event) throws IOException {
         App.setRoot("projects");
     }

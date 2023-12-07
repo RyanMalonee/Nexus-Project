@@ -13,6 +13,7 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TitledPane;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -67,7 +68,7 @@ public class TasksController {
     private Text commentTxt;
 
     @FXML
-    private Text destinationText;
+    private TextField destinationText;
 
     private Project project;
 
@@ -187,7 +188,7 @@ public class TasksController {
 
         for(Column column : selectedProject.getColumns()){
             if(column.getName().equals(destination)){
-                destination = column.getColumnType().toString();
+                destination = column.getName();
             }
         }
 

@@ -100,7 +100,7 @@
       </Pane>
       <Button fx:id="changLog" layoutX="191.0" layoutY="430.0" mnemonicParsing="false" style="-fx-border-color: grey; -fx-background-color: white; -fx-text-fill: black; -fx-border-width: .6;" styleClass="changeLog" text="Change-Log" />
       <Button layoutX="170.0" layoutY="55.0" mnemonicParsing="false" onMouseClicked="#goBack" styleClass="backButton" text="&lt;" />
-      <TextField layoutX="543.0" layoutY="431.0" prefHeight="25.0" prefWidth="83.0" promptText="Destination" />
+      <TextField fx:id="destinationText" layoutX="543.0" layoutY="431.0" prefHeight="25.0" prefWidth="83.0" promptText="Destination" />
       <Button fx:id="moveTask" layoutX="453.0" layoutY="431.0" mnemonicParsing="false" onMouseClicked="#onMoveTaskClicked" prefHeight="27.0" prefWidth="84.0" style="-fx-border-color: grey; -fx-background-color: white; -fx-text-fill: black; -fx-border-width: .6;" styleClass="moveTask" text="Move Task" />
    </children>
 </AnchorPane>
